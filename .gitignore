@@ -1,0 +1,12 @@
+*
+!.gitignore
+!i3
+!i3/**
+!i3status
+!i3status
+!nvim
+!nvim/**
+!rofi
+!rofi/**
+!fish
+!fish/**
