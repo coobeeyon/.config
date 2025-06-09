@@ -91,7 +91,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
@@ -173,6 +173,11 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+
+-- Short to neogit
+vim.keymap.set('n', '<leader>g', function()
+  require('neogit').open()
+end)
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -279,12 +284,16 @@ require('lazy').setup({
     },
   },
   {
-    "NeogitOrg/neogit",
+   'NeogitOrg/neogit',
     dependencies = {
-      "nvim-lua/plenary.nvim",
-      "sindrets/diffview.nvim",
+      'nvim-lua/plenary.nvim', -- required
+      'sindrets/diffview.nvim', -- optional - Diff integration
 
-      "nvim-telescope/telescope.nvim",
+      -- Only one of these is needed.
+      'nvim-telescope/telescope.nvim', -- optional
+      'ibhagwan/fzf-lua', -- optional
+      'echasnovski/mini.pick', -- optional
+      'folke/snacks.nvim', -- optional
     },
   },
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
