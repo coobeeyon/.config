@@ -10,3 +10,5 @@
 !rofi/**
 !fish
 !fish/**
+!polybar
+!polybar/**
