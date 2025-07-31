@@ -32,7 +32,7 @@
     ignore_newline = no
     
     # Modern notification sizing and positioning
-    width = (300, 450)
+    width = (400, 600)
     height = (80, 400)
     origin = top-right
     offset = (20, 50)
