@@ -2,6 +2,10 @@
 
 configuration {
     modi: "drun,run,window";
+    run-command: "bash -c '{cmd}'";
+    run-shell-command: "bash -c '{cmd}'";
+    run-list-command: "bash -c 'compgen -c | sort -u'";
+    PATH: "/home/mdaum/.local/bin:/usr/local/bin:/usr/bin:/bin";
     font: "DaddyTimeMono Nerd Font 12";
     show-icons: true;
     icon-theme: "Papirus";
