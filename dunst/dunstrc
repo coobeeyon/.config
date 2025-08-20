@@ -33,9 +33,9 @@
     
     # Modern notification sizing and positioning
     width = (400, 600)
-    height = (80, 400)
+    height = 400
     origin = top-right
-    offset = (20, 50)
+    offset = 20x50
     
     # Subtle transparency for modern look
     transparency = 5
