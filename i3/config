@@ -54,6 +54,8 @@ exec --no-startup-id nm-applet
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 # Pomodoro daemon
 exec --no-startup-id i3-gnome-pomodoro daemon
+# Display setup
+exec --no-startup-id test -x ~/.local/bin/setup-displays.sh && ~/.local/bin/setup-displays.sh
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -82,7 +84,7 @@ tiling_drag modifier titlebar
 bindsym $mod+Return exec warp-terminal
 
 # kill focused window
-bindsym $mod+Shift+quotedbl kill
+bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id dmenu_run
