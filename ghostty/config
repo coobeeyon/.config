@@ -22,7 +22,7 @@
 font-family = JetBrainsMono
 
 # Light theme
-theme = light:GruvboxLight,dark:GruvboxDark
+theme = Gruvbox Light
 
 # Ctrl+number to switch tabs
 keybind = ctrl+1=goto_tab:1
