@@ -60,6 +60,9 @@ set $refresh_i3status killall -SIGUSR1 i3status
 
 # Pomodoro keybindings
 bindsym $mod+p exec --no-startup-id i3-gnome-pomodoro start-stop
+
+# Screenshot
+bindsym Print exec flameshot gui
 bindsym $mod+Shift+p exec --no-startup-id i3-gnome-pomodoro skip
 bindsym $mod+Ctrl+p exec --no-startup-id i3-gnome-pomodoro pause
 bindsym $mod+Ctrl+Shift+p exec --no-startup-id i3-gnome-pomodoro resume
@@ -198,3 +201,8 @@ bindsym $mod+l mode "resize"
 
 # Start polybar instead of i3bar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+# Start a NetworkManager tray icon compatible with Polybar's XEmbed tray
+# Only start if nm-tray exists, nm-applet is not running, and nm-tray isn't already running (for portability across distros)
+exec_always --no-startup-id sh -c 'command -v nm-tray >/dev/null && ! pgrep -x nm-applet >/dev/null && ! pgrep -x nm-tray >/dev/null && nm-tray || true'
+
+exec_always --no-startup-id sh -c "sleep 1; setxkbmap -layout us -variant dvorak -option '' -option ctrl:swapcaps"
