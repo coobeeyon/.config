@@ -3,4 +3,6 @@ set -x BROWSER firefox
 set -gx PATH $HOME/.bun/bin $HOME/go/bin $PATH
 
 # OpenClaw Completion
-source "/home/mdaum/.openclaw/completions/openclaw.fish"
+if test -f "$HOME/.openclaw/completions/openclaw.fish"
+    source "$HOME/.openclaw/completions/openclaw.fish"
+end
