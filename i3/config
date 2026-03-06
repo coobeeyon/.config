@@ -70,6 +70,8 @@ bindsym $mod+Ctrl+p exec --no-startup-id i3-gnome-pomodoro pause
 bindsym $mod+Ctrl+Shift+p exec --no-startup-id i3-gnome-pomodoro resume
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym F3 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym F2 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
@@ -140,10 +142,6 @@ set $ws9 "9"
 set $ws10 "10"
 
 # switch to workspace
-bindsym Control+Shift+i workspace number $ws1
-bindsym Control+Shift+j workspace number $ws2
-bindsym Control+Shift+p workspace number $ws3
-
 bindsym Control+Shift+1 workspace number $ws1
 bindsym Control+Shift+2 workspace number $ws2
 bindsym Control+Shift+3 workspace number $ws3
