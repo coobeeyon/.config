@@ -1,7 +1,7 @@
 font-family = JetBrainsMono
 
 # Light theme
-theme = Gruvbox Light
+theme = GruvboxLight
 
 # Ctrl+number to switch tabs
 keybind = ctrl+digit_1=goto_tab:1
