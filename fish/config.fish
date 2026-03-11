@@ -1,6 +1,8 @@
-if not set -q SSH_AUTH_SOCK
-    eval (ssh-agent -c)
-    ssh-add
+if status is-interactive
+    if not set -q SSH_AUTH_SOCK
+        eval (ssh-agent -c)
+        ssh-add
+    end
 end
 
 status --is-interactive; and direnv hook fish | source
