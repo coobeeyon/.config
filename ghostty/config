@@ -56,8 +56,9 @@ keybind = ctrl+d=new_split:down
 keybind = ctrl+r=new_split:right
 
 # --- Splits: navigate ---
-keybind = ctrl+.=goto_split:next
-keybind = ctrl+shift+.=goto_split:previous
+# split nav: parked until dvorak mapping is sorted
+# keybind = ctrl+v=goto_split:next
+# keybind = ctrl+alt+v=goto_split:previous
 keybind = ctrl+alt+arrow_up=goto_split:up
 keybind = ctrl+alt+arrow_down=goto_split:down
 keybind = ctrl+alt+arrow_left=goto_split:left
