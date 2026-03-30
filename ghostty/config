@@ -56,8 +56,8 @@ keybind = ctrl+d=new_split:down
 keybind = ctrl+r=new_split:right
 
 # --- Splits: navigate ---
-keybind = ctrl+period=goto_split:next
-keybind = ctrl+shift+period=goto_split:previous
+keybind = ctrl+alt+tab=goto_split:next
+keybind = ctrl+alt+shift+tab=goto_split:previous
 keybind = ctrl+alt+arrow_up=goto_split:up
 keybind = ctrl+alt+arrow_down=goto_split:down
 keybind = ctrl+alt+arrow_left=goto_split:left
