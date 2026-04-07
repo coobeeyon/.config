@@ -6,105 +6,97 @@ gtk-titlebar = false
 split-divider-color = #d65d0e
 
 # ============================================================
-# Keybindings: ghostty owns Ctrl, i3 owns Ctrl+Shift
-# Exceptions: copy/paste stay Ctrl+Shift (Ctrl+C/V are terminal signals)
-# Source: ghostty +list-keybinds defaults + custom (2026-03-30)
+# Keybindings — minimal config for use with zellij
+# Ghostty only handles: font size, copy/paste, fullscreen, config
+# Everything else is unbound so zellij (alt-based) has no conflicts
 # ============================================================
-#
-# DVORAK NOTE: Ghostty uses W3C physical key names for named keys (e.g. 'period',
-# 'comma', 'equal'). These map to physical key POSITIONS on a QWERTY layout, not
-# to the characters they produce. On Dvorak, using named keys fires on the wrong
-# physical key. SOLUTION: use the literal Unicode character instead (e.g. '.' not
-# 'period'). The parser falls through to unicode matching, which fires on whatever
-# key PRODUCES that character in the current layout.
-#
-# Physical key positions on Dvorak vs QWERTY (relevant to this config):
-#   W3C 'period'    = QWERTY . position (kc 60) = Dvorak v  → use '.'
-#   W3C 'comma'     = QWERTY , position (kc 59) = Dvorak w  → use ','
-#   W3C 'equal'     = QWERTY = position (kc 21) = Dvorak ]  → use '='
-#   W3C 'minus'     = QWERTY - position (kc 20) = Dvorak [  → use '-' (already literal)
-#   '-' literal     = unicode U+002D → fires on Dvorak - key (kc 48) ✓
-#   '+' literal     = unicode U+002B → fires on Dvorak Shift+= ✓
 
 # --- Font size ---
-# ctrl+== uses unicode '=' → fires on the key that produces '=' in Dvorak
-# ctrl++= uses unicode '+' → fires on Shift+= in Dvorak (Ctrl++)
-# ctrl+-  uses unicode '-' → fires on Dvorak - key ✓ (already correct)
-keybind = ctrl+==increase_font_size:1
-keybind = ctrl++=increase_font_size:1
-keybind = ctrl+-=decrease_font_size:1
-keybind = ctrl+0=reset_font_size
+keybind = ctrl+equal=increase_font_size:1
+keybind = ctrl+plus=increase_font_size:1
+keybind = ctrl+minus=decrease_font_size:1
+keybind = ctrl+zero=reset_font_size
 
-# --- Copy / Paste (Ctrl+Shift exception — Ctrl+C/V are terminal signals) ---
+# --- Copy / Paste ---
 keybind = ctrl+shift+c=copy_to_clipboard
 keybind = ctrl+shift+v=paste_from_clipboard
 keybind = ctrl+insert=copy_to_clipboard
 keybind = shift+insert=paste_from_selection
-keybind = copy=copy_to_clipboard
-keybind = paste=paste_from_clipboard
-
-# --- Selection ---
-keybind = ctrl+a=select_all
-keybind = shift+arrow_up=adjust_selection:up
-keybind = shift+arrow_down=adjust_selection:down
-keybind = shift+arrow_left=adjust_selection:left
-keybind = shift+arrow_right=adjust_selection:right
-
-# --- Scrolling ---
-keybind = shift+page_up=scroll_page_up
-keybind = shift+page_down=scroll_page_down
-keybind = shift+home=scroll_to_top
-keybind = shift+end=scroll_to_bottom
-
-# --- Tabs (all Ctrl) ---
-keybind = ctrl+t=new_tab
-keybind = ctrl+w=close_tab:this
-keybind = ctrl+tab=next_tab
-keybind = ctrl+shift+tab=previous_tab
-keybind = ctrl+page_down=next_tab
-keybind = ctrl+page_up=previous_tab
-keybind = ctrl+digit_1=goto_tab:1
-keybind = ctrl+digit_2=goto_tab:2
-keybind = ctrl+digit_3=goto_tab:3
-keybind = ctrl+digit_4=goto_tab:4
-keybind = ctrl+digit_5=goto_tab:5
-keybind = ctrl+digit_6=goto_tab:6
-keybind = ctrl+digit_7=goto_tab:7
-keybind = ctrl+digit_8=goto_tab:8
-keybind = ctrl+digit_9=goto_tab:9
-
-# --- Splits: create (Ctrl, not Ctrl+Shift) ---
-keybind = ctrl+d=new_split:down
-keybind = ctrl+r=new_split:right
-
-# --- Splits: navigate ---
-# Unicode codepoints fire on whichever key PRODUCES that character in the current layout.
-# In Dvorak: '.' is at QWERTY E position (kc 26), ',' is at QWERTY W position (kc 25).
-# Named keys 'period'/'comma' would fire at QWERTY period/comma positions
-# which on Dvorak produce 'v' and 'w' respectively — wrong for Dvorak users.
-keybind = ctrl+.=goto_split:next
-keybind = ctrl+shift+.=goto_split:previous
-keybind = ctrl+alt+arrow_up=goto_split:up
-keybind = ctrl+alt+arrow_down=goto_split:down
-keybind = ctrl+alt+arrow_left=goto_split:left
-keybind = ctrl+alt+arrow_right=goto_split:right
-
-# --- Splits: resize ---
-keybind = ctrl+alt+shift+arrow_up=resize_split:up,10
-keybind = ctrl+alt+shift+arrow_down=resize_split:down,10
-keybind = ctrl+alt+shift+arrow_left=resize_split:left,10
-keybind = ctrl+alt+shift+arrow_right=resize_split:right,10
 
 # --- Window ---
-keybind = ctrl+n=new_window
 keybind = alt+f4=close_window
 keybind = ctrl+enter=toggle_fullscreen
 
 # --- Config ---
-# ctrl+, uses unicode ',' → fires on the key that produces ',' in Dvorak
-# (named 'comma' would fire on W3C Comma = QWERTY , = Dvorak w key — wrong)
-keybind = ctrl+,=open_config
-keybind = ctrl+shift+,=reload_config
+keybind = ctrl+comma=open_config
+keybind = ctrl+shift+comma=reload_config
 
-# --- Debug ---
-keybind = ctrl+alt+shift+j=write_screen_file:open
+# --- Unbind all other defaults ---
+keybind = ctrl+a=unbind
+keybind = ctrl+shift+a=unbind
+keybind = ctrl+t=unbind
+keybind = ctrl+shift+t=unbind
+keybind = ctrl+w=unbind
+keybind = ctrl+shift+w=unbind
+keybind = ctrl+n=unbind
+keybind = ctrl+shift+n=unbind
+keybind = ctrl+d=unbind
+keybind = ctrl+r=unbind
+keybind = ctrl+shift+e=unbind
+keybind = ctrl+shift+o=unbind
+keybind = ctrl+tab=unbind
+keybind = ctrl+shift+tab=unbind
+keybind = ctrl+page_up=unbind
+keybind = ctrl+page_down=unbind
+keybind = ctrl+shift+left=unbind
+keybind = ctrl+shift+right=unbind
+keybind = ctrl+period=unbind
+keybind = ctrl+shift+period=unbind
+keybind = ctrl+shift+enter=unbind
+keybind = ctrl+shift+q=unbind
+keybind = ctrl+shift+i=unbind
+keybind = ctrl+shift+j=unbind
+keybind = ctrl+alt+shift+j=unbind
+keybind = ctrl+shift+page_up=unbind
+keybind = ctrl+shift+page_down=unbind
+keybind = ctrl+one=unbind
+keybind = ctrl+two=unbind
+keybind = ctrl+three=unbind
+keybind = ctrl+four=unbind
+keybind = ctrl+five=unbind
+keybind = ctrl+six=unbind
+keybind = ctrl+seven=unbind
+keybind = ctrl+eight=unbind
+keybind = ctrl+nine=unbind
+keybind = alt+one=unbind
+keybind = alt+two=unbind
+keybind = alt+three=unbind
+keybind = alt+four=unbind
+keybind = alt+five=unbind
+keybind = alt+six=unbind
+keybind = alt+seven=unbind
+keybind = alt+eight=unbind
+keybind = alt+nine=unbind
+keybind = ctrl+alt+up=unbind
+keybind = ctrl+alt+down=unbind
+keybind = ctrl+alt+left=unbind
+keybind = ctrl+alt+right=unbind
+keybind = ctrl+alt+shift+up=unbind
+keybind = ctrl+alt+shift+down=unbind
+keybind = ctrl+alt+shift+left=unbind
+keybind = ctrl+alt+shift+right=unbind
+keybind = super+ctrl+left_bracket=unbind
+keybind = super+ctrl+right_bracket=unbind
+keybind = super+ctrl+shift+up=unbind
+keybind = super+ctrl+shift+down=unbind
+keybind = super+ctrl+shift+left=unbind
+keybind = super+ctrl+shift+right=unbind
+keybind = super+ctrl+shift+plus=unbind
+keybind = shift+up=unbind
+keybind = shift+down=unbind
+keybind = shift+left=unbind
+keybind = shift+right=unbind
+keybind = shift+page_up=unbind
+keybind = shift+page_down=unbind
+keybind = shift+home=unbind
+keybind = shift+end=unbind
