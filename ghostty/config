@@ -1,6 +1,9 @@
 font-family = JetBrainsMono
 theme = Gruvbox Light
 
+# Make split dividers visible on light background
+split-divider-color = #d65d0e
+
 # ============================================================
 # Keybindings: ghostty owns Ctrl, i3 owns Ctrl+Shift
 # Exceptions: copy/paste stay Ctrl+Shift (Ctrl+C/V are terminal signals)

@@ -12,6 +12,7 @@
 !rofi/**
 !fish
 !fish/**
+fish/fishd.tmp.*
 !polybar
 !polybar/**
 !ghostty
