@@ -17,3 +17,5 @@ fish/fishd.tmp.*
 !polybar/**
 !ghostty
 !ghostty/**
+!zellij
+!zellij/**

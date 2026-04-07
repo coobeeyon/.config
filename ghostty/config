@@ -1,5 +1,6 @@
 font-family = JetBrainsMono
-theme = Gruvbox Light
+theme = Builtin Solarized Dark
+gtk-titlebar = false
 
 # Make split dividers visible on light background
 split-divider-color = #d65d0e
