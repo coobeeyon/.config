@@ -13,6 +13,8 @@
 !fish
 !fish/**
 fish/fishd.tmp.*
+fish/fish_variables*
+!fish/fish_variables
 !polybar
 !polybar/**
 !ghostty
