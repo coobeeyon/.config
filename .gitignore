@@ -20,3 +20,4 @@ fish/fish_variables*
 !ghostty/**
 !zellij
 !zellij/**
+/.trapper_keeper
