@@ -1,5 +1,5 @@
 font-family = JetBrainsMono
-theme = Builtin Solarized Dark
+theme = iTerm2 Solarized Dark
 gtk-titlebar = false
 
 # Make split dividers visible on light background
@@ -44,7 +44,6 @@ keybind = copy=copy_to_clipboard
 keybind = paste=paste_from_clipboard
 
 # --- Selection ---
-keybind = ctrl+a=select_all
 keybind = shift+arrow_up=adjust_selection:up
 keybind = shift+arrow_down=adjust_selection:down
 keybind = shift+arrow_left=adjust_selection:left
