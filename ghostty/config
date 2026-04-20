@@ -1,5 +1,5 @@
 font-family = JetBrainsMono
-theme = Builtin Solarized Dark
+theme = iTerm2 Solarized Dark
 gtk-titlebar = false
 
 # Make split dividers visible on light background
